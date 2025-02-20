@@ -11,7 +11,7 @@ __device__ cuFloatComplex twiddle(int k, int N) {
     return make_cuFloatComplex(cosf(angle), sinf(angle));
 }
 
-// Butterfly operation
+// butterfly operation
 __device__ void butterfly(cuFloatComplex& a, cuFloatComplex& b, cuFloatComplex w) {
     cuFloatComplex temp = cuCmulf(w, b);
     b = cuCsubf(a, temp);
